@@ -1,11 +1,11 @@
 ﻿@font-face {
     font-family: Heebo;
-    src: url('Heebo-VariableFont_wght.ttf') format('truetype');
+    src: url('../font/Heebo-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
     font-family: TwentyfourSixteen;
-    src: url('TwentyfourSixteen-Regular.ttf') format('truetype');
+    src: url('../font/TwentyfourSixteen-Regular.ttf') format('truetype');
 }
 
 body {
