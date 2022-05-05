@@ -1,0 +1,136 @@
+﻿@font-face {
+    font-family: Heebo;
+    src: url('Heebo-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: TwentyfourSixteen;
+    src: url('TwentyfourSixteen-Regular.ttf') format('truetype');
+}
+
+body {
+    background-color: #2C2C2C;
+    user-select: none;
+}
+
+    body button {
+        font-family: "Heebo", Arial;
+        font-weight: bold;
+    }
+
+.Keypad, .MenuButton {
+    width: 100px;
+    height: 100px;
+    background-color: #393737;
+    color: white;
+    font-size: 2em;
+    border-radius: 5px 5px;
+    border: 2px solid rgb(128, 128, 128);
+    box-shadow: 1px 1px #393737, 3px 3px 2px rgb(100, 100, 100);
+    margin: 5px 5px 5px 5px;
+    transition: box-shadow 0.15s, margin 0.15s;
+    user-select: none;
+    /* NIGHT VISION        
+        color: rgb(24, 222, 46);
+    text-shadow: 0 0 12px rgb(24, 222, 46), 0 0 15px rgb(24, 222, 46), 0 0 21px rgb(24, 222, 46), 0 0 42px rgb(24, 222, 46);*/
+}
+
+.RoundButton {
+    width: 100px;
+    height: 100px;
+    background-color: #393737;
+    border-radius: 50px 50px;
+    border: 2px solid rgb(170, 170, 170);
+    box-shadow: 1px 1px #393737, 3px 3px 1px rgb(100, 100, 100);
+    margin: 5px 5px 5px 5px;
+    transition: box-shadow 0.15s, margin 0.15s;
+    user-select: none;
+}
+
+    .Keypad:hover, .MenuButton:hover, .RoundButton:hover {
+        border-color: rgb(110, 110, 110);
+    }
+
+.Keypad:active, .MenuButton:active {
+    border: 2px solid rgb(100, 100, 100);
+    box-shadow: 0px 0px rgb(128, 128, 128);
+    margin: 8px 2px 2px 8px;
+}
+
+.RoundButton:active {
+    border: 2px solid rgb(100, 100, 100);
+    box-shadow: 0px 0px rgb(128, 128, 128);
+    margin: 8px 2px 2px 8px;
+}
+
+
+#Display1, #Display2, #Display3, #Display4, #Display5 {
+    width: 370px;
+    height: 90px;
+    overflow: hidden;
+    border: 2px solid rgb(20,20,20);
+}
+
+
+.Display1Symbol, .Display2Symbol, .Display3Symbol, .Display4Symbol, .Display5Symbol {
+    background-color: #1F3A2D;
+    width: 80px;
+    min-width: 80px;
+    min-height:90px;
+    text-align: center;
+    vertical-align: middle;
+    float: left;
+    color: #42B941;
+    font-family: "TwentyfourSixteen", Arial;
+    font-size: 8em;
+    margin: auto;
+    display: table-cell;
+}
+
+#D1S0, #D2S0, #D3S0, #D4S0, #D5S0 {
+    min-width: 50px;
+    width: 50px;
+}
+
+
+#Display0Plate {
+    width: 450px;
+    height: 120px;
+    background-color: #252525;
+}
+
+#Display0 {
+    width: 405px;
+    height: 60px;
+    line-height: 90px;
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgb(20,20,20);
+}
+
+.Display0Symbol {
+    background-color: #1F3A2D;
+    width: 45px;
+    min-height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    float: left;
+    color: #42B941;
+    font-family: "TwentyfourSixteen", Arial;
+    font-size: 4.5em;
+    margin: auto;
+    display: table-cell;
+}
+
+
+/*
+table tr td {
+    border: 1px solid white;
+}
+
+table {
+    border: 1px solid green;
+}
