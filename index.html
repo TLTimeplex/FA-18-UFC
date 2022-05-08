@@ -10,7 +10,59 @@
 
     <table>
         <tr>
-            <td></td>
+            <td>
+                <table id="leftColume">
+                    <tr>
+                        <td>
+                            <!--placeholder-->
+                        </td>
+                        <td>
+                            <table id="IP">
+                                <tr>
+                                    <td>
+                                        <p>I/P</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button id="SelectButton_IP" class="SelectButton RoundButton"></button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr id="ADF">
+                        <td colspan="2">
+                            <p>ADF</p>
+                        </td>
+                    </tr>
+                    <tr id="ADF">
+                        <td>1<br />OFF<br />2</td>
+                        <td>
+                            <!--New Element needed-->
+                            <button id="FlickSelect_ADF" class="RoundButton">Flickswitch</button>
+                        </td>
+                    </tr>
+                    <tr id="COMM1_VOL_Text">
+                        <td colspan="2">
+                            <p>VOL</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <!--placeholder-->
+                        </td>
+                        <td>
+                            <button id="COMM1_Volume_Knob" class="RoundButton">Knob</button>
+                        </td>
+                    </tr>
+                    <tr id="COMM1_VOL_Text">
+                        <td colspan="2">
+                            <p>COMM 1</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
             <td>
                 <table>
                     <tr>
@@ -90,6 +142,7 @@
                             <button id="OptionButton_1" class="OptionButton RoundButton"></button>
                         </td>
                         <td>
+                            <!--Display1-->
                             <div id="Display1">
                                 <p id="D1S0" class="Display1Symbol Symbol"></p>
                                 <p id="D1S1" class="Display1Symbol AlphaNumericSymbol">G</p>
@@ -104,6 +157,7 @@
                             <button id="OptionButton_2" class="OptionButton RoundButton"></button>
                         </td>
                         <td>
+                            <!--Display2-->
                             <div id="Display2">
                                 <p id="D2S0" class="Display2Symbol Symbol">:</p>
                                 <p id="D2S1" class="Display2Symbol AlphaNumericSymbol">S</p>
@@ -118,6 +172,7 @@
                             <button id="OptionButton_3" class="OptionButton RoundButton"></button>
                         </td>
                         <td>
+                            <!--Display3-->
                             <div id="Display3">
                                 <p id="D3S0" class="Display3Symbol Symbol"></p>
                                 <p id="D3S1" class="Display3Symbol AlphaNumericSymbol">C</p>
@@ -132,6 +187,7 @@
                             <button id="OptionButton_4" class="OptionButton RoundButton"></button>
                         </td>
                         <td>
+                            <!--Display4-->
                             <div id="Display4">
                                 <div id="D4S0" class="Display4Symbol Symbol">:</div>
                                 <div id="D4S1" class="Display4Symbol AlphaNumericSymbol">A</div>
@@ -146,6 +202,7 @@
                             <button id="OptionButton_5" class="OptionButton RoundButton"></button>
                         </td>
                         <td>
+                            <!--Display5-->
                             <div id="Display5">
                                 <p id="D5S0" class="Display5Symbol Symbol"></p>
                                 <p id="D5S1" class="Display5Symbol AlphaNumericSymbol">M</p>
@@ -189,9 +246,5 @@
             </td>
         </tr>
     </table>
-
-    <button id="ExtraButton_IP" class="RoundButton">&nbsp;</button>
-
-
 </body>
 </html>

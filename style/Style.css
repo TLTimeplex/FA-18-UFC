@@ -76,7 +76,7 @@ body {
     background-color: #1F3A2D;
     width: 80px;
     min-width: 80px;
-    min-height:90px;
+    min-height: 90px;
     text-align: center;
     vertical-align: middle;
     float: left;
@@ -125,6 +125,23 @@ body {
     display: table-cell;
 }
 
+#leftColume {
+    font-family: Heebo, Arial;
+    text-align: right;
+    color: white;
+}
+
+#IP, #ADF, .COMM1_VOL_Text {
+    font-family: Heebo, Arial;
+    text-align: right;
+    color: white;
+}
+
+    #IP p, #ADF p, #COMM1_VOL_Text p {
+        margin: 0px 0px 0px 0px;
+        font-size: 2.2em;
+        height: 1.08em;
+    }
 
 /*
 table tr td {
