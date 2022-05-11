@@ -5,7 +5,8 @@ var screenRightChannel = 1;
 var MenuSetEmpty = ["", "", "", "", "", "", null, null];
 var MenuSetStandBy = ["", "", "", "", "", "", screenLeftChannel, screenRightChannel];
 var MenuSetPreTest = [".........", ":AUTO", ":SELF", ":TEST", ":PLS", ":STBY", 1, 1];
-var MenuSetTest = ["**8888888", ":****", ":****", ":****", ":****", ":****", 8, 8];
+var MenuSetTest1 = ["**8888888", ":****", ":****", ":****", ":****", ":****", 8, 8];
+var MenuSetTest2 = ["OO.......", ":OOOO", ":OOOO", ":OOOO", ":OOOO", ":OOOO", 18, 18];
 
 
 const brightnessKnob = document.getElementById("Brightness");
@@ -84,9 +85,14 @@ function initScreen() {
 
 
     setTimeout(function () {
-        setMenuSet(MenuSetTest);
+        setMenuSet(MenuSetTest1);
         updateScreens();
     }, 9000);
+
+    setTimeout(function () {
+        setMenuSet(MenuSetTest2);
+        updateScreens();
+    }, 12500);
 
 
     setTimeout(function () {
