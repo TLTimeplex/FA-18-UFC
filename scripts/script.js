@@ -4,7 +4,7 @@ var screenRightChannel = 1;
 
 var MenuSetEmpty = ["", "", "", "", "", "", null, null];
 var MenuSetStandBy = ["", "", "", "", "", "", screenLeftChannel, screenRightChannel];
-var MenuSetPreTest = ["", ":AUTO", ":TEST", ":ACTV", ":PLS", ":WAIT", 1, 1];
+var MenuSetPreTest = [".........", ":AUTO", ":SELF", ":TEST", ":PLS", ":STBY", 1, 1];
 var MenuSetTest = ["**8888888", ":****", ":****", ":****", ":****", ":****", 8, 8];
 
 
@@ -35,12 +35,58 @@ function initScreen() {
     setTimeout(function () {
         setMenuSet(MenuSetPreTest);
         updateScreens();
-    }, 1500);
+    }, 1000);
+
+    setTimeout(function () {
+        screenContent[0] = "-........";
+        updateScreen(0);
+    }, 2000);
+
+    setTimeout(function () {
+        screenContent[0] = "--.......";
+        updateScreen(0);
+    }, 3000);
+
+    setTimeout(function () {
+        screenContent[0] = "---......";
+        updateScreen(0);
+    }, 4000);
+
+    setTimeout(function () {
+        screenContent[0] = "----.....";
+        updateScreen(0);
+    }, 5000);
+
+    setTimeout(function () {
+        screenContent[0] = "-----....";
+        updateScreen(0);
+    }, 6000);
+
+    setTimeout(function () {
+        screenContent[0] = "------...";
+        updateScreen(0);
+    }, 7000);
+
+    setTimeout(function () {
+        screenContent[0] = "-------..";
+        updateScreen(0);
+    }, 7500);
+
+    setTimeout(function () {
+        screenContent[0] = "--------.";
+        updateScreen(0);
+    }, 8000);
+
+    setTimeout(function () {
+        screenContent[0] = "---------";
+        updateScreen(0);
+    }, 8500);
+
 
     setTimeout(function () {
         setMenuSet(MenuSetTest);
         updateScreens();
-    }, 5000);
+    }, 9000);
 
 
     setTimeout(function () {
@@ -48,7 +94,7 @@ function initScreen() {
         screenRightChannel = 1;
         setMenuSet(MenuSetStandBy);
         updateScreens();
-    }, 10000);
+    }, 15000);
 }
 
 /**
