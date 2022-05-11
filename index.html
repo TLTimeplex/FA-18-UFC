@@ -8,42 +8,34 @@
 </head>
 <body>
 
-    <table>
+    <table align="center" style="border: 5px solid black">
         <tr>
             <td>
-                <table id="leftColume">
-                    <tr>
-                        <td>
-                            <!--placeholder-->
-                        </td>
-                        <td>
-                            <table id="IP">
-                                <tr>
-                                    <td>
-                                        <p>I/P</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button id="SelectButton_IP" class="SelectButton RoundButton"></button>
-                                    </td>
-                                </tr>
-                            </table>
+                <table id="LeftColume">
+                    <tr class="DescriptionText">
+                        <td colspan="2">
+                            <p>I/P</p>
                         </td>
                     </tr>
-                    <tr id="ADF">
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button id="SelectButton_IP" class="SelectButton RoundButton"></button>
+                        </td>
+                    </tr>
+                    <tr class="DescriptionText">
                         <td colspan="2">
                             <p>ADF</p>
                         </td>
                     </tr>
-                    <tr id="ADF">
+                    <tr>
                         <td>1<br />OFF<br />2</td>
                         <td>
                             <!--New Element needed-->
                             <button id="FlickSelect_ADF" class="RoundButton">Flickswitch</button>
                         </td>
                     </tr>
-                    <tr id="COMM1_VOL_Text">
+                    <tr class="DescriptionText">
                         <td colspan="2">
                             <p>VOL</p>
                         </td>
@@ -53,12 +45,31 @@
                             <!--placeholder-->
                         </td>
                         <td>
-                            <button id="COMM1_Volume_Knob" class="RoundButton">Knob</button>
+                            <img id="LeftVolume" class="Knob" src="img/knob.png" draggable="false" />
                         </td>
                     </tr>
-                    <tr id="COMM1_VOL_Text">
+                    <tr class="DescriptionText">
                         <td colspan="2">
                             <p>COMM 1</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <!--Display Left Row-->
+                            <div id="LeftRowDisplayPlate">
+                                <div id="LeftRowDisplay">
+                                    <p>1</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <!--ChanelSelectKnob-->
+                            <button id="COMM1_Volume_Knob" class="RoundButton">ChanelSelect</button>
                         </td>
                     </tr>
                 </table>
@@ -67,67 +78,185 @@
                 <table>
                     <tr>
                         <td>
-                            <!--Display0-->
-                            <div id="Display0Plate">
-                                <div id="Display0">
-                                    <p id="D0S0" class="Display0Symbol AlphaNumericSymbol">N</p>
-                                    <p id="D0S1" class="Display0Symbol AlphaNumericSymbol">4</p>
-                                    <p id="D0S3" class="Display0Symbol NumericSymbol">2</p>
-                                    <p id="D0S4" class="Display0Symbol NumericSymbol">°</p>
-                                    <p id="D0S5" class="Display0Symbol NumericSymbol">8</p>
-                                    <p id="D0S6" class="Display0Symbol NumericSymbol">7</p>
-                                    <p id="D0S7" class="Display0Symbol NumericSymbol">'</p>
-                                    <p id="D0S8" class="Display0Symbol NumericSymbol">5</p>
-                                    <p id="D0S9" class="Display0Symbol NumericSymbol">0</p>
-                                </div>
-                            </div>
+
+
+
+
+                            <table>
+                                <tr>
+                                    <td>
+                                        <!--Display0-->
+                                        <div id="Display0Plate">
+                                            <div id="Display0">
+                                                <p id="D0S0" class="Display0Symbol AlphaNumericSymbol">N</p>
+                                                <p id="D0S1" class="Display0Symbol AlphaNumericSymbol">4</p>
+                                                <p id="D0S2" class="Display0Symbol NumericSymbol">2</p>
+                                                <p id="D0S3" class="Display0Symbol NumericSymbol">°</p>
+                                                <p id="D0S4" class="Display0Symbol NumericSymbol">8</p>
+                                                <p id="D0S5" class="Display0Symbol NumericSymbol">7</p>
+                                                <p id="D0S6" class="Display0Symbol NumericSymbol">'</p>
+                                                <p id="D0S7" class="Display0Symbol NumericSymbol">5</p>
+                                                <p id="D0S8" class="Display0Symbol NumericSymbol">0</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table id="KeypadTable" align="center">
+                                            <tr>
+                                                <td>
+                                                    <button id="Keypad_1" class="Keypad"><br />1</button>
+                                                </td>
+                                                <td>
+                                                    <button id="Keypad_2" class="Keypad">N<br />2</button>
+                                                </td>
+                                                <td>
+                                                    <button id="Keypad_3" class="Keypad"><br />3</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <button id="Keypad_4" class="Keypad">W<br />4</button>
+                                                </td>
+                                                <td>
+                                                    <button id="Keypad_5" class="Keypad"><br />5</button>
+                                                </td>
+                                                <td>
+                                                    <button id="Keypad_6" class="Keypad">E<br />6</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <button id="Keypad_7" class="Keypad"><br />7</button>
+                                                </td>
+                                                <td>
+                                                    <button id="Keypad_8" class="Keypad">S<br />8</button>
+                                                </td>
+                                                <td>
+                                                    <button id="Keypad_9" class="Keypad"><br />9</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <button id="Keypad_CLR" class="Keypad">CLR</button>
+                                                </td>
+                                                <td>
+                                                    <button id="Keypad_0" class="Keypad">-<br />0</button>
+                                                </td>
+                                                <td>
+                                                    <button id="Keypad_ENT" class="Keypad"><content>ENT</content></button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <button id="OptionButton_1" class="OptionButton RoundButton"></button>
+                                    </td>
+                                    <td>
+                                        <!--Display1-->
+                                        <div id="Display1">
+                                            <p id="D1S0" class="Display1Symbol Symbol"></p>
+                                            <p id="D1S1" class="Display1Symbol AlphaNumericSymbol">G</p>
+                                            <p id="D1S2" class="Display1Symbol AlphaNumericSymbol">R</p>
+                                            <p id="D1S3" class="Display1Symbol AlphaNumericSymbol">C</p>
+                                            <p id="D1S4" class="Display1Symbol AlphaNumericSymbol">V</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button id="OptionButton_2" class="OptionButton RoundButton"></button>
+                                    </td>
+                                    <td>
+                                        <!--Display2-->
+                                        <div id="Display2">
+                                            <p id="D2S0" class="Display2Symbol Symbol">:</p>
+                                            <p id="D2S1" class="Display2Symbol AlphaNumericSymbol">S</p>
+                                            <p id="D2S2" class="Display2Symbol AlphaNumericSymbol">Q</p>
+                                            <p id="D2S3" class="Display2Symbol AlphaNumericSymbol">C</p>
+                                            <p id="D2S4" class="Display2Symbol AlphaNumericSymbol">H</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button id="OptionButton_3" class="OptionButton RoundButton"></button>
+                                    </td>
+                                    <td>
+                                        <!--Display3-->
+                                        <div id="Display3">
+                                            <p id="D3S0" class="Display3Symbol Symbol"></p>
+                                            <p id="D3S1" class="Display3Symbol AlphaNumericSymbol">C</p>
+                                            <p id="D3S2" class="Display3Symbol AlphaNumericSymbol">P</p>
+                                            <p id="D3S3" class="Display3Symbol AlphaNumericSymbol">H</p>
+                                            <p id="D3S4" class="Display3Symbol AlphaNumericSymbol">R</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button id="OptionButton_4" class="OptionButton RoundButton"></button>
+                                    </td>
+                                    <td>
+                                        <!--Display4-->
+                                        <div id="Display4">
+                                            <div id="D4S0" class="Display4Symbol Symbol">:</div>
+                                            <div id="D4S1" class="Display4Symbol AlphaNumericSymbol">A</div>
+                                            <div id="D4S2" class="Display4Symbol AlphaNumericSymbol">M</div>
+                                            <div id="D4S3" class="Display4Symbol AlphaNumericSymbol"></div>
+                                            <div id="D4S4" class="Display4Symbol AlphaNumericSymbol"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button id="OptionButton_5" class="OptionButton RoundButton"></button>
+                                    </td>
+                                    <td>
+                                        <!--Display5-->
+                                        <div id="Display5">
+                                            <p id="D5S0" class="Display5Symbol Symbol"></p>
+                                            <p id="D5S1" class="Display5Symbol AlphaNumericSymbol">M</p>
+                                            <p id="D5S2" class="Display5Symbol AlphaNumericSymbol">E</p>
+                                            <p id="D5S3" class="Display5Symbol AlphaNumericSymbol">N</p>
+                                            <p id="D5S4" class="Display5Symbol AlphaNumericSymbol">U</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <table id="KeypadTable" align="center">
+                        <td colspan="4" align="center">
+                            <table id="MenuRow">
                                 <tr>
                                     <td>
-                                        <button id="Keypad_1" class="Keypad"><br />1</button>
+                                        <button id="MenuButton_AP" class="MenuButton">A/P</button>
                                     </td>
                                     <td>
-                                        <button id="Keypad_2" class="Keypad">N<br />2</button>
+                                        <button id="MenuButton_IFF" class="MenuButton">IFF</button>
                                     </td>
                                     <td>
-                                        <button id="Keypad_3" class="Keypad"><br />3</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button id="Keypad_4" class="Keypad">W<br />4</button>
+                                        <button id="MenuButton_TCN" class="MenuButton">TCN</button>
                                     </td>
                                     <td>
-                                        <button id="Keypad_5" class="Keypad"><br />5</button>
+                                        <button id="MenuButton_ILS" class="MenuButton">ILS</button>
                                     </td>
                                     <td>
-                                        <button id="Keypad_6" class="Keypad">E<br />6</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button id="Keypad_7" class="Keypad"><br />7</button>
+                                        <button id="MenuButton_DL" class="MenuButton">D/L</button>
                                     </td>
                                     <td>
-                                        <button id="Keypad_8" class="Keypad">S<br />8</button>
+                                        <button id="MenuButton_BCN" class="MenuButton">BCN</button>
                                     </td>
                                     <td>
-                                        <button id="Keypad_9" class="Keypad"><br />9</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button id="Keypad_CLR" class="Keypad">CLR</button>
-                                    </td>
-                                    <td>
-                                        <button id="Keypad_0" class="Keypad">-<br />0</button>
-                                    </td>
-                                    <td>
-                                        <button id="Keypad_ENT" class="Keypad"><content>ENT</content></button>
+                                        <button id="MenuButton_ONOFF" class="MenuButton">ON<br />OFF</button>
                                     </td>
                                 </tr>
                             </table>
@@ -136,115 +265,74 @@
                 </table>
             </td>
             <td>
-                <table>
-                    <tr>
-                        <td>
-                            <button id="OptionButton_1" class="OptionButton RoundButton"></button>
+                <table id="RightColume">
+                    <tr class="DescriptionText">
+                        <td colspan="2">
+                            <p>BRT</p>
                         </td>
-                        <td>
-                            <!--Display1-->
-                            <div id="Display1">
-                                <p id="D1S0" class="Display1Symbol Symbol"></p>
-                                <p id="D1S1" class="Display1Symbol AlphaNumericSymbol">G</p>
-                                <p id="D1S2" class="Display1Symbol AlphaNumericSymbol">R</p>
-                                <p id="D1S3" class="Display1Symbol AlphaNumericSymbol">C</p>
-                                <p id="D1S4" class="Display1Symbol AlphaNumericSymbol">V</p>
-                            </div>
+                    </tr>
+                    <tr>
+                        <td class="RightPosFix">
+                            <img id="Brightness" class="Knob" src="img/knob.png" draggable="false" />
+                        </td>
+                        <td><!--Placeholder--></td>
+                    </tr>
+                    <tr class="DescriptionText">
+                        <td colspan="2">
+                            <p></p>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <button id="OptionButton_2" class="OptionButton RoundButton"></button>
+                            <!--New class needed-->
+                            <button id="MenuButton_EMCON" class="MenuButton">EM<br />CON</button>
                         </td>
-                        <td>
-                            <!--Display2-->
-                            <div id="Display2">
-                                <p id="D2S0" class="Display2Symbol Symbol">:</p>
-                                <p id="D2S1" class="Display2Symbol AlphaNumericSymbol">S</p>
-                                <p id="D2S2" class="Display2Symbol AlphaNumericSymbol">Q</p>
-                                <p id="D2S3" class="Display2Symbol AlphaNumericSymbol">C</p>
-                                <p id="D2S4" class="Display2Symbol AlphaNumericSymbol">H</p>
-                            </div>
+                        <td><!--Placeholder--></td>
+                    </tr>
+
+                    <tr class="DescriptionText">
+                        <td colspan="2">
+                            <p>VOL</p>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <button id="OptionButton_3" class="OptionButton RoundButton"></button>
+                            <img id="RightVolume" class="Knob" src="img/knob.png" draggable="false" />
                         </td>
-                        <td>
-                            <!--Display3-->
-                            <div id="Display3">
-                                <p id="D3S0" class="Display3Symbol Symbol"></p>
-                                <p id="D3S1" class="Display3Symbol AlphaNumericSymbol">C</p>
-                                <p id="D3S2" class="Display3Symbol AlphaNumericSymbol">P</p>
-                                <p id="D3S3" class="Display3Symbol AlphaNumericSymbol">H</p>
-                                <p id="D3S4" class="Display3Symbol AlphaNumericSymbol">R</p>
-                            </div>
+                        <td><!--Placeholder--></td>
+                    </tr>
+                    <tr class="DescriptionText">
+                        <td colspan="2">
+                            <p>COMM 2</p>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <button id="OptionButton_4" class="OptionButton RoundButton"></button>
-                        </td>
-                        <td>
-                            <!--Display4-->
-                            <div id="Display4">
-                                <div id="D4S0" class="Display4Symbol Symbol">:</div>
-                                <div id="D4S1" class="Display4Symbol AlphaNumericSymbol">A</div>
-                                <div id="D4S2" class="Display4Symbol AlphaNumericSymbol">M</div>
-                                <div id="D4S3" class="Display4Symbol AlphaNumericSymbol"></div>
-                                <div id="D4S4" class="Display4Symbol AlphaNumericSymbol"></div>
+                            <!--Display Right Row-->
+                            <div id="RightRowDisplayPlate">
+                                <div id="RightRowDisplay">
+                                    <p>1</p>
+                                </div>
                             </div>
                         </td>
+                        <td><!--Placeholder--></td>
                     </tr>
                     <tr>
                         <td>
-                            <button id="OptionButton_5" class="OptionButton RoundButton"></button>
+                            <!--ChanelSelectKnob-->
+                            <button id="COMM1_Volume_Knob" class="RoundButton">ChanelSelect</button>
                         </td>
-                        <td>
-                            <!--Display5-->
-                            <div id="Display5">
-                                <p id="D5S0" class="Display5Symbol Symbol"></p>
-                                <p id="D5S1" class="Display5Symbol AlphaNumericSymbol">M</p>
-                                <p id="D5S2" class="Display5Symbol AlphaNumericSymbol">E</p>
-                                <p id="D5S3" class="Display5Symbol AlphaNumericSymbol">N</p>
-                                <p id="D5S4" class="Display5Symbol AlphaNumericSymbol">U</p>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td colspan="4" align="center">
-                <table>
-                    <tr>
-                        <td>
-                            <button id="MenuButton_AP" class="MenuButton">A/P</button>
-                        </td>
-                        <td>
-                            <button id="MenuButton_IFF" class="MenuButton">IFF</button>
-                        </td>
-                        <td>
-                            <button id="MenuButton_TCN" class="MenuButton">TCN</button>
-                        </td>
-                        <td>
-                            <button id="MenuButton_ILS" class="MenuButton">ILS</button>
-                        </td>
-                        <td>
-                            <button id="MenuButton_DL" class="MenuButton">D/L</button>
-                        </td>
-                        <td>
-                            <button id="MenuButton_BCN" class="MenuButton">BCN</button>
-                        </td>
-                        <td>
-                            <button id="MenuButton_ONOFF" class="MenuButton">ON<br />OFF</button>
-                        </td>
+                        <td><!--Placeholder--></td>
                     </tr>
                 </table>
             </td>
         </tr>
+
     </table>
+
+
+
+    <script src="scripts/script.js"></script>
+    <script>initScreen();</script>
 </body>
 </html>

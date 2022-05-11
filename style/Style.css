@@ -8,6 +8,10 @@
     src: url('../font/TwentyfourSixteen-Regular.ttf') format('truetype');
 }
 
+* {
+    cursor: crosshair;
+}
+
 body {
     background-color: #2C2C2C;
     user-select: none;
@@ -125,24 +129,80 @@ body {
     display: table-cell;
 }
 
-#leftColume {
+#LeftColume {
     font-family: Heebo, Arial;
     text-align: right;
     color: white;
 }
 
-#IP, #ADF, .COMM1_VOL_Text {
-    font-family: Heebo, Arial;
-    text-align: right;
-    color: white;
-}
-
-    #IP p, #ADF p, #COMM1_VOL_Text p {
+    #LeftColume .DescriptionText p {
+        font-family: Heebo, Arial;
+        text-align: right;
+        color: white;
         margin: 0px 0px 0px 0px;
         font-size: 2.2em;
         height: 1.08em;
     }
 
+#RightColume .DescriptionText p {
+    font-family: Heebo, Arial;
+    text-align: left;
+    color: white;
+    margin: 0px 0px 0px 0px;
+    font-size: 2.2em;
+    height: 1.08em;
+    white-space: nowrap;
+}
+
+#LeftRowDisplayPlate, #RightRowDisplayPlate {
+    height: 160px;
+    background-color: #252525;
+}
+
+#LeftRowDisplay, #RightRowDisplay {
+    width: 1em;
+    height: 1em;
+    line-height: 1.35em;
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgb(20,20,20);
+    font-family: "TwentyfourSixteen", Arial;
+    background-color: #1F3A2D;
+    text-align: right;
+    vertical-align: middle;
+    color: #42B941;
+    font-size: 5em;
+}
+
+    #LeftRowDisplay p, #RightRowDisplay p {
+        margin: auto;
+    }
+
+.Knob {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px 50px;
+    border: 1px hidden;
+    /*box-shadow: 3px 3px 1px rgb(100, 100, 100);*/
+    margin: 3px 5px 3px 5px;
+    transition: box-shadow 0.15s, transform 0.3s;
+    user-select: none;
+}
+
+    .Knob:hover {
+        cursor: n-resize;
+    }
+
+#LeftColume .Knob {
+    margin: 3px 5px 0px 5px;
+}
+
+.RightPosFix {
+    width: 114px;
+}
 /*
 table tr td {
     border: 1px solid white;
