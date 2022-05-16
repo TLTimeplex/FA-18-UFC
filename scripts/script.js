@@ -17,6 +17,12 @@ brightnessKnobValue = 50;
 leftVolumeKnobValue = 50;
 rightVolumeKnobValue = 50;
 
+const comm1Knob = document.getElementById("COMM1_Knob");
+const comm2Knob = document.getElementById("COMM2_Knob");
+
+comm1KnobValue = 0;
+comm2KnobValue = 0;
+
 function setMenuSet(set) {
     screenContent[0] = set[0];
     screenContent[1] = set[1];
@@ -32,7 +38,7 @@ function setMenuSet(set) {
 function initScreen() {
     setMenuSet(MenuSetEmpty);
     updateScreens();
-
+    
     setTimeout(function () {
         setMenuSet(MenuSetPreTest);
         updateScreens();
@@ -84,7 +90,7 @@ function initScreen() {
     }, 8500);
 
 
-    setTimeout(function () {
+    setTimeout(() => {
         setMenuSet(MenuSetTest1);
         updateScreens();
     }, 9000);
@@ -93,7 +99,7 @@ function initScreen() {
         setMenuSet(MenuSetTest2);
         updateScreens();
     }, 12500);
-
+    
 
     setTimeout(function () {
         screenLeftChannel = 1;
@@ -152,8 +158,41 @@ function updateScreen(dis) {
     }
 }
 
+
+function scrollCOMM1(event) {
+    if (event.deltaY > 1) {
+        comm1KnobValue += (100 / 19);
+    } else if (event.deltaY < -1){
+        comm1KnobValue -= (100 / 19);
+    }
+
+    comm1KnobValue = Math.min(Math.max(0, comm1KnobValue), 100 - (100 / 19));
+
+    screenLeftChannel = Math.round(comm1KnobValue / (100 / 19)) + 1;
+    updateScreen(6);
+
+    var orientationCOMM1 = ((360 / 100) * comm1KnobValue);
+    comm1Knob.style.transform = 'rotate(' + orientationCOMM1 + 'deg)';
+}
+
+function scrollCOMM2(event) {
+    if (event.deltaY > 1) {
+        comm2KnobValue += (100 / 19);
+    } else if (event.deltaY < -1) {
+        comm2KnobValue -= (100 / 19);
+    }
+
+    comm2KnobValue = Math.min(Math.max(0, comm2KnobValue), 100 - (100 / 19));
+
+    screenRightChannel = Math.round(comm2KnobValue / (100 / 19)) + 1;
+    updateScreen(7);
+
+    var orientationCOMM2 = ((360 / 100) * comm2KnobValue);
+    comm2Knob.style.transform = 'rotate(' + orientationCOMM2 + 'deg)';
+}
+
 function scrollRVK(event) {
-    if (event.deltaY > 0) {
+    if (event.deltaY < 0) {
         rightVolumeKnobValue -= 3;
     } else {
         rightVolumeKnobValue += 3;
@@ -166,7 +205,7 @@ function scrollRVK(event) {
 }
 
 function scrollLVK(event) {
-    if (event.deltaY > 0) {
+    if (event.deltaY < 0) {
         leftVolumeKnobValue -= 3;
     } else {
         leftVolumeKnobValue += 3;
@@ -179,7 +218,7 @@ function scrollLVK(event) {
 }
 
 function scrollBRT(event) {
-    if (event.deltaY > 0) {
+    if (event.deltaY < 0) {
         brightnessKnobValue -= 3;
     } else {
         brightnessKnobValue += 3;
@@ -194,3 +233,8 @@ function scrollBRT(event) {
 rightVolumeKnob.onwheel = scrollRVK;
 leftVolumeKnob.onwheel = scrollLVK;
 brightnessKnob.onwheel = scrollBRT;
+
+comm1Knob.onwheel = scrollCOMM1;
+comm2Knob.onwheel = scrollCOMM2;
+
+initScreen();
