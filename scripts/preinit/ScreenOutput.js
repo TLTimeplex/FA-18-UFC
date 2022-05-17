@@ -1,27 +1,16 @@
-var screenContent = ["**8888888", ":****", ":****", ":****", ":****", ":****"];
+/*"Current" Screen values */
+var screenContent = ["**8888888", ":****", ":****", ":****", ":****", ":****"]; //S0, S1, ..., S5
 var screenLeftChannel = 1;
 var screenRightChannel = 1;
 
+/*Screen Presets*/
 var MenuSetEmpty = ["", "", "", "", "", "", null, null];
 var MenuSetStandBy = ["", "", "", "", "", "", screenLeftChannel, screenRightChannel];
 var MenuSetPreTest = [".........", ":AUTO", ":SELF", ":TEST", ":PLS", ":STBY", 1, 1];
 var MenuSetTest1 = ["**8888888", ":****", ":****", ":****", ":****", ":****", 8, 8];
 var MenuSetTest2 = ["OO.......", ":OOOO", ":OOOO", ":OOOO", ":OOOO", ":OOOO", 18, 18];
 
-
-const brightnessKnob = document.getElementById("Brightness");
-const leftVolumeKnob = document.getElementById("LeftVolume");
-const rightVolumeKnob = document.getElementById("RightVolume"); 
-
-brightnessKnobValue = 50;
-leftVolumeKnobValue = 50;
-rightVolumeKnobValue = 50;
-
-const comm1Knob = document.getElementById("COMM1_Knob");
-const comm2Knob = document.getElementById("COMM2_Knob");
-
-comm1KnobValue = 0;
-comm2KnobValue = 0;
+/***********************************************************/
 
 function setMenuSet(set) {
     screenContent[0] = set[0];
@@ -38,7 +27,7 @@ function setMenuSet(set) {
 function initScreen() {
     setMenuSet(MenuSetEmpty);
     updateScreens();
-    
+
     setTimeout(function () {
         setMenuSet(MenuSetPreTest);
         updateScreens();
@@ -99,7 +88,7 @@ function initScreen() {
         setMenuSet(MenuSetTest2);
         updateScreens();
     }, 12500);
-    
+
 
     setTimeout(function () {
         screenLeftChannel = 1;
@@ -157,84 +146,3 @@ function updateScreen(dis) {
         segment[i].innerHTML = text.charAt(i);
     }
 }
-
-
-function scrollCOMM1(event) {
-    if (event.deltaY > 1) {
-        comm1KnobValue += (100 / 19);
-    } else if (event.deltaY < -1){
-        comm1KnobValue -= (100 / 19);
-    }
-
-    comm1KnobValue = Math.min(Math.max(0, comm1KnobValue), 100 - (100 / 19));
-
-    screenLeftChannel = Math.round(comm1KnobValue / (100 / 19)) + 1;
-    updateScreen(6);
-
-    var orientationCOMM1 = ((360 / 100) * comm1KnobValue);
-    comm1Knob.style.transform = 'rotate(' + orientationCOMM1 + 'deg)';
-}
-
-function scrollCOMM2(event) {
-    if (event.deltaY > 1) {
-        comm2KnobValue += (100 / 19);
-    } else if (event.deltaY < -1) {
-        comm2KnobValue -= (100 / 19);
-    }
-
-    comm2KnobValue = Math.min(Math.max(0, comm2KnobValue), 100 - (100 / 19));
-
-    screenRightChannel = Math.round(comm2KnobValue / (100 / 19)) + 1;
-    updateScreen(7);
-
-    var orientationCOMM2 = ((360 / 100) * comm2KnobValue);
-    comm2Knob.style.transform = 'rotate(' + orientationCOMM2 + 'deg)';
-}
-
-function scrollRVK(event) {
-    if (event.deltaY < 0) {
-        rightVolumeKnobValue -= 3;
-    } else {
-        rightVolumeKnobValue += 3;
-    }
-
-    rightVolumeKnobValue = Math.min(Math.max(0, rightVolumeKnobValue), 100);
-
-    var orientationRVK = ((270 / 100) * rightVolumeKnobValue) - (270 / 2);
-    rightVolumeKnob.style.transform = 'rotate(' + orientationRVK + 'deg)';
-}
-
-function scrollLVK(event) {
-    if (event.deltaY < 0) {
-        leftVolumeKnobValue -= 3;
-    } else {
-        leftVolumeKnobValue += 3;
-    }
-
-    leftVolumeKnobValue = Math.min(Math.max(0, leftVolumeKnobValue), 100);
-
-    var orientationLVK = ((270 / 100) * leftVolumeKnobValue) - (270 / 2);
-    leftVolumeKnob.style.transform = 'rotate(' + orientationLVK + 'deg)';
-}
-
-function scrollBRT(event) {
-    if (event.deltaY < 0) {
-        brightnessKnobValue -= 3;
-    } else {
-        brightnessKnobValue += 3;
-    }
-
-    brightnessKnobValue = Math.min(Math.max(0, brightnessKnobValue), 100);
-
-    var orientationBRT = ((270 / 100) * brightnessKnobValue) - (270 / 2);
-    brightnessKnob.style.transform = 'rotate(' + orientationBRT + 'deg)';
-}
-
-rightVolumeKnob.onwheel = scrollRVK;
-leftVolumeKnob.onwheel = scrollLVK;
-brightnessKnob.onwheel = scrollBRT;
-
-comm1Knob.onwheel = scrollCOMM1;
-comm2Knob.onwheel = scrollCOMM2;
-
-initScreen();

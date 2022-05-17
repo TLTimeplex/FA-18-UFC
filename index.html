@@ -5,6 +5,12 @@
     <meta charset="utf-8" />
     <title>F/A-18 UFC</title>
     <link rel="stylesheet" href="style/style.css" />
+
+    <script src="scripts/preinit/ScreenOutput.js"></script>
+    <script src="scripts/preinit/KnobInput.js"></script>
+    <script src="scripts/preinit/ButtonInput.js"></script>
+
+    <script src="scripts/Init.js"></script>
 </head>
 <body>
     <table align="center" style="border: 5px solid black">
@@ -19,7 +25,7 @@
                     <tr>
                         <td></td>
                         <td>
-                            <button id="SelectButton_IP" class="SelectButton RoundButton"></button>
+                            <button id="SelectButton_IP" class="SelectButton RoundButton" onmousedown="keyInput(keys.extraIP);"></button>
                         </td>
                     </tr>
                     <tr class="DescriptionText">
@@ -105,46 +111,46 @@
                                         <table id="KeypadTable" align="center">
                                             <tr>
                                                 <td>
-                                                    <button id="Keypad_1" class="Keypad"><br />1</button>
+                                                    <button id="Keypad_1" class="Keypad" onmousedown="keyInput(keys.one);"><br />1</button>
                                                 </td>
                                                 <td>
-                                                    <button id="Keypad_2" class="Keypad">N<br />2</button>
+                                                    <button id="Keypad_2" class="Keypad" onmousedown="keyInput(keys.two);">N<br />2</button>
                                                 </td>
                                                 <td>
-                                                    <button id="Keypad_3" class="Keypad"><br />3</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <button id="Keypad_4" class="Keypad">W<br />4</button>
-                                                </td>
-                                                <td>
-                                                    <button id="Keypad_5" class="Keypad"><br />5</button>
-                                                </td>
-                                                <td>
-                                                    <button id="Keypad_6" class="Keypad">E<br />6</button>
+                                                    <button id="Keypad_3" class="Keypad" onmousedown="keyInput(keys.three);"><br />3</button>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <button id="Keypad_7" class="Keypad"><br />7</button>
+                                                    <button id="Keypad_4" class="Keypad" onmousedown="keyInput(keys.four);">W<br />4</button>
                                                 </td>
                                                 <td>
-                                                    <button id="Keypad_8" class="Keypad">S<br />8</button>
+                                                    <button id="Keypad_5" class="Keypad" onmousedown="keyInput(keys.five);"><br />5</button>
                                                 </td>
                                                 <td>
-                                                    <button id="Keypad_9" class="Keypad"><br />9</button>
+                                                    <button id="Keypad_6" class="Keypad" onmousedown="keyInput(keys.six);">E<br />6</button>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <button id="Keypad_CLR" class="Keypad">CLR</button>
+                                                    <button id="Keypad_7" class="Keypad" onmousedown="keyInput(keys.seven);"><br />7</button>
                                                 </td>
                                                 <td>
-                                                    <button id="Keypad_0" class="Keypad">-<br />0</button>
+                                                    <button id="Keypad_8" class="Keypad" onmousedown="keyInput(keys.eight);">S<br />8</button>
                                                 </td>
                                                 <td>
-                                                    <button id="Keypad_ENT" class="Keypad"><content>ENT</content></button>
+                                                    <button id="Keypad_9" class="Keypad" onmousedown="keyInput(keys.nine);"><br />9</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <button id="Keypad_CLR" class="Keypad" onmousedown="keyInput(keys.clear);">CLR</button>
+                                                </td>
+                                                <td>
+                                                    <button id="Keypad_0" class="Keypad" onmousedown="keyInput(keys.zero);">-<br />0</button>
+                                                </td>
+                                                <td>
+                                                    <button id="Keypad_ENT" class="Keypad" onmousedown="keyInput(keys.enter);"><content>ENT</content></button>
                                                 </td>
                                             </tr>
                                         </table>
@@ -156,7 +162,7 @@
                             <table>
                                 <tr>
                                     <td>
-                                        <button id="OptionButton_1" class="OptionButton RoundButton"></button>
+                                        <button id="OptionButton_1" class="OptionButton RoundButton" onmousedown="keyInput(keys.optionOne);"></button>
                                     </td>
                                     <td>
                                         <!--Display1-->
@@ -171,7 +177,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="OptionButton_2" class="OptionButton RoundButton"></button>
+                                        <button id="OptionButton_2" class="OptionButton RoundButton" onmousedown="keyInput(keys.optionTwo);"></button>
                                     </td>
                                     <td>
                                         <!--Display2-->
@@ -186,7 +192,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="OptionButton_3" class="OptionButton RoundButton"></button>
+                                        <button id="OptionButton_3" class="OptionButton RoundButton" onmousedown="keyInput(keys.optionThree);"></button>
                                     </td>
                                     <td>
                                         <!--Display3-->
@@ -201,7 +207,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="OptionButton_4" class="OptionButton RoundButton"></button>
+                                        <button id="OptionButton_4" class="OptionButton RoundButton" onmousedown="keyInput(keys.optionFour);"></button>
                                     </td>
                                     <td>
                                         <!--Display4-->
@@ -216,7 +222,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="OptionButton_5" class="OptionButton RoundButton"></button>
+                                        <button id="OptionButton_5" class="OptionButton RoundButton" onmousedown="keyInput(keys.optionFive);"></button>
                                     </td>
                                     <td>
                                         <!--Display5-->
@@ -237,25 +243,25 @@
                             <table id="MenuRow">
                                 <tr>
                                     <td>
-                                        <button id="MenuButton_AP" class="MenuButton">A/P</button>
+                                        <button id="MenuButton_AP" class="MenuButton" onmousedown="keyInput(keys.menuAP);">A/P</button>
                                     </td>
                                     <td>
-                                        <button id="MenuButton_IFF" class="MenuButton">IFF</button>
+                                        <button id="MenuButton_IFF" class="MenuButton" onmousedown="keyInput(keys.menuIFF);">IFF</button>
                                     </td>
                                     <td>
-                                        <button id="MenuButton_TCN" class="MenuButton">TCN</button>
+                                        <button id="MenuButton_TCN" class="MenuButton" onmousedown="keyInput(keys.menuTCN);">TCN</button>
                                     </td>
                                     <td>
-                                        <button id="MenuButton_ILS" class="MenuButton">ILS</button>
+                                        <button id="MenuButton_ILS" class="MenuButton" onmousedown="keyInput(keys.menuILS);">ILS</button>
                                     </td>
                                     <td>
-                                        <button id="MenuButton_DL" class="MenuButton">D/L</button>
+                                        <button id="MenuButton_DL" class="MenuButton" onmousedown="keyInput(keys.menuDL);">D/L</button>
                                     </td>
                                     <td>
-                                        <button id="MenuButton_BCN" class="MenuButton">BCN</button>
+                                        <button id="MenuButton_BCN" class="MenuButton" onmousedown="keyInput(keys.menuBCN);">BCN</button>
                                     </td>
                                     <td>
-                                        <button id="MenuButton_ONOFF" class="MenuButton">ON<br />OFF</button>
+                                        <button id="MenuButton_ONOFF" class="MenuButton" onmousedown="keyInput(keys.menuOnOff);">ON<br />OFF</button>
                                     </td>
                                 </tr>
                             </table>
@@ -284,7 +290,7 @@
                     <tr>
                         <td>
                             <!--New class needed-->
-                            <button id="MenuButton_EMCON" class="MenuButton">EM<br />CON</button>
+                            <button id="MenuButton_EMCON" class="MenuButton" onmousedown="keyInput(keys.extraEmCon);">EM<br />CON</button>
                         </td>
                         <td><!--Placeholder--></td>
                     </tr>
@@ -329,7 +335,6 @@
 
     </table>
 
-    <script src="scripts/script.js"></script>
 
 </body>
 </html>
