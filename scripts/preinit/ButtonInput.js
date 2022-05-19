@@ -109,6 +109,8 @@ function menuAutopilotControl(key) {
             raltOn = !raltOn;
             break;
         case keys.optionFive:
+            if (!autoCourseSet)
+                break;
             if (cplOn) {
                 atthOn = false;
                 hselOn = false;
