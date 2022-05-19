@@ -94,6 +94,7 @@ function initScreen() {
         screenLeftChannel = 1;
         screenRightChannel = 1;
         setMenuSet(MenuSetStandBy);
+        systemMode = sysMode.menu;
         updateScreens();
     }, 15000);
 }
@@ -103,7 +104,8 @@ function initScreen() {
  * */
 function updateScreens() {
     for (var i = 0; i < 8; i++) {
-        updateScreen(i);
+        if (screenContent[i] != undefined)
+            updateScreen(i);
     }
 }
 

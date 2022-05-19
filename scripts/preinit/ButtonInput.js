@@ -36,11 +36,20 @@ const sysMode = {
     menu: 2,
     autopilot: 3
 };
-
+// Public Nodes
 var blocked = false;
 var standby = false;
 var systemMode = sysMode.off;
 
+// Autopilot Nodes
+var headingSet = false;
+var autoCourseSet = false;
+// Autopilot States
+var atthOn = false;
+var hselOn = false;
+var baltOn = false;
+var raltOn = false;
+var cplOn = false;
 
 /**
  * 
@@ -48,4 +57,72 @@ var systemMode = sysMode.off;
  */
 function keyInput(key) {
     if (blocked || systemMode == sysMode.off || systemMode == sysMode.startup) return;
+    switch (key) {
+        case keys.menuAP:
+            systemMode = sysMode.autopilot;
+            menuAutopilot();
+            return;
+    }
+
+    switch (systemMode) {
+        case sysMode.autopilot:
+            menuAutopilotControl(key);
+            break;
+    }
+}
+
+function menuAutopilot() {
+    let displaySet = [""];
+    displaySet.push((atthOn ? ":" : " ") + "ATTH");
+    displaySet.push((hselOn ? ":" : " ") + "HSEL");
+    displaySet.push((baltOn ? ":" : " ") + "BALT");
+    displaySet.push((raltOn ? ":" : " ") + "RALT");
+    if (autoCourseSet)
+        displaySet.push(cplOn ? ":CPL " : " CPL");
+
+    setMenuSet(displaySet);
+    updateScreens();
+}
+
+function menuAutopilotControl(key) {
+    switch (key) {
+        case keys.optionOne:
+            atthOn = !atthOn;
+            hselOn = false;
+            baltOn = false;
+            raltOn = false;
+            cplOn = false;
+            break;
+        case keys.optionTwo:
+            atthOn = false;
+            hselOn = !hselOn;
+            cplOn = false;
+            break;
+        case keys.optionThree:
+            atthOn = false;
+            baltOn = !baltOn;
+            raltOn = false;
+            break;
+        case keys.optionFour:
+            atthOn = false;
+            baltOn = false;
+            raltOn = !raltOn;
+            break;
+        case keys.optionFive:
+            if (cplOn) {
+                atthOn = false;
+                hselOn = false;
+                cplOn = false;
+            } else {
+                atthOn = false;
+                hselOn = false;
+                cplOn = true;
+                baltOn = false;
+                menuAutopilotControl(keys.optionThree);
+            }
+            break;
+    }
+
+    menuAutopilot();
+
 }

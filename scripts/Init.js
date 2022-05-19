@@ -16,6 +16,7 @@ function init() {
     comm2Knob.onwheel = scrollCOMM2;
 
     //Start screen animation
+    systemMode = sysMode.startup;
     initScreen();
 }
 
