@@ -7,6 +7,7 @@ function init() {
     comm1Knob = document.getElementById("COMM1_Knob");
     comm2Knob = document.getElementById("COMM2_Knob");
 
+
     // Add event Listeners on the knobs
     rightVolumeKnob.onwheel = scrollRVK;
     leftVolumeKnob.onwheel = scrollLVK;
@@ -18,6 +19,8 @@ function init() {
     //Start screen animation
     systemMode = sysMode.startup;
     initScreen();
+
+    initOptionWindow();
 }
 
 window.onload = init;
