@@ -212,8 +212,8 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    height: 350px;
+    /*    width: 600px;*/
+    /*    height: 350px;*/
     z-index: 5;
     background-color: dimgray;
     border: 2px solid black;
@@ -235,24 +235,34 @@ body {
     font-size: 2em;
     font-family: Heebo;
     margin: auto;
+    display: table;
 }
 
 #windowBarReturn {
+    display: table-cell;
     position: relative;
     height: 50px;
     width: 50px;
+    margin-right: 0;
     background-color: green;
 }
 
 #windowBarClose {
+    display: table-cell;
     position: relative;
     margin-left: auto;
     margin-right: 0;
     height: 50px;
     width: 50px;
-    top: -50px;
     right: 0px;
     background-color: red;
+}
+
+#windiwInfo {
+    display: table-cell;
+    position: relative;
+    margin-left: auto;
+    height: 50px;
 }
 
 /*
